@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="">
+    Welcome to Vantage UI
+  </div>
+
+  <div>
+    <v-date-range-picker
+      v-model:start="start"
+      v-model:end="end"
+      color="orange"
+    ></v-date-range-picker>
+  </div>
+
+  <div>
+    <router-link :to="{ name: 'card' }">Go to Card</router-link>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-export default defineComponent({
+<script>
+export default {
   name: "Home",
-  components: {
-    HelloWorld
+  data() {
+    return {
+      start: null,
+      end: null
+    };
   }
-});
+};
 </script>
