@@ -46,7 +46,9 @@ const routes = [
     text: "Checkbox",
     searchable: true,
     component: () =>
-      import(/* webpackChunkName: "checkBox" */ "../views/docs/CheckBox.vue")
+      import(
+        /* webpackChunkName: "checkBox" */ "../views/docs/form/CheckBox.vue"
+      )
   },
   {
     path: "/badge",
@@ -62,7 +64,7 @@ const routes = [
     text: "Button",
     searchable: true,
     component: () =>
-      import(/* webpackChunkName: "card" */ "../views/docs/Button.vue")
+      import(/* webpackChunkName: "card" */ "../views/docs/form/Button.vue")
   },
   {
     path: "/description-list",
@@ -72,6 +74,58 @@ const routes = [
     component: () =>
       import(
         /* webpackChunkName: "description-list" */ "../views/docs/DescriptionList.vue"
+      )
+  },
+  {
+    path: "/toggle",
+    name: "toggle",
+    text: "Toggle",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "toggle" */ "../views/docs/form/Toggle.vue")
+  },
+  {
+    path: "/radio",
+    name: "radio",
+    text: "Radio",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "radio" */ "../views/docs/form/Radio.vue")
+  },
+  {
+    path: "/input",
+    name: "input",
+    text: "Input",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "input" */ "../views/docs/form/Input.vue")
+  },
+  {
+    path: "/ping",
+    name: "ping",
+    text: "Ping",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "ping" */ "../views/docs/Ping.vue")
+  },
+  {
+    path: "/progress-bar",
+    name: "progress-bar",
+    text: "Progress Bar",
+    searchable: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "progress-bar" */ "../views/docs/ProgressBar.vue"
+      )
+  },
+  {
+    path: "/progress-spinner",
+    name: "progress-spinner",
+    text: "Progress Spinner",
+    searchable: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "progress-spinner" */ "../views/docs/ProgressSpinner.vue"
       )
   }
 ];

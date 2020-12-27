@@ -95,7 +95,7 @@
                         @click="showMobileNav = false"
                         :class="[
                           isActive
-                            ? `bg-gray-900 text-white borded border-l-4 border-teal-400`
+                            ? `bg-gray-900 text-white borded border-l-4 border-cyan-400`
                             : 'borded border-l-4 border-gray-800'
                         ]"
                         class="group flex items-center px-4 py-2 text-base leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
@@ -145,7 +145,7 @@
                   <div
                     :class="[
                       isActive
-                        ? `bg-gray-900 text-white borded border-l-4 border-teal-400`
+                        ? `bg-gray-900 text-white borded border-l-4 border-cyan-400`
                         : 'borded border-l-4 border-gray-800'
                     ]"
                     class="group flex items-center px-4 py-2 text-base leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
@@ -217,7 +217,7 @@
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.5.1
+              v0.5.6
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"
@@ -364,6 +364,36 @@ export default {
         {
           title: "Description List",
           name: "description-list",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Toggle",
+          name: "toggle",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Radio",
+          name: "radio",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Input",
+          name: "input",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Ping",
+          name: "ping",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Progress Bar",
+          name: "progress-bar",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Progress Spinner",
+          name: "progress-spinner",
           icon: "mdi-view-dashboard"
         }
       ]

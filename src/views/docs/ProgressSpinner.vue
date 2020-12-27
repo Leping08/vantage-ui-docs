@@ -1,12 +1,12 @@
 <template>
   <v-card
-    id="avatar"
-    heading="Avatar"
+    id="progress-spinner"
+    heading="Progress Spinner"
     :padding="true"
     :border="true"
     class="m-4"
   >
-    <v-avatar id="example" :color="color" :name="name" />
+    <v-progress-spinner id="example" :color="color" :size="size" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
@@ -28,10 +28,10 @@
         class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Name
+          Size
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input v-model="name"></v-input>
+          <v-input type="number" v-model="size"></v-input>
         </dd>
       </div>
       <div
@@ -60,28 +60,28 @@
 
 <script>
 /* eslint-disable */
-  import { VAvatar } from 'vantage-ui';
+  import { VProgressSpinner } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
   export default {
     components: {
       ComponentPropsTable,
-      ColorSelect
+      ColorSelect,
     },
     data() {
       return {
         component: null,
-        name: 'John Doe',
+        size: 10,
         color: 'cyan'
       }
     },
     created() {
-      this.component = VAvatar;
+      this.component = VProgressSpinner;
     },
     computed: {
       code() {return`
-<v-badge 
-  name="${this.name}"
+<v-progress-spinner 
+  size="${this.percent}"
   color="${this.color}"
 />
       `}

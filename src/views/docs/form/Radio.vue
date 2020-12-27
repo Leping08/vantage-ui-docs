@@ -1,19 +1,6 @@
 <template>
-  <v-card
-    id="check-box"
-    heading="Check Box"
-    :padding="true"
-    :border="true"
-    class="m-4"
-  >
-    <v-check-box
-      id="example"
-      :color="color"
-      v-model="model"
-      :value="value"
-      :label="label"
-      :sub-title="subTitle"
-    />
+  <v-card id="radio" heading="Radio" :padding="true" :border="true" class="m-4">
+    <v-radio :label="label" :value="value" v-model="radio" :color="color" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
@@ -35,10 +22,10 @@
         class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Color
+          V-Model
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <color-select v-model="color" />
+          <v-input v-model="radio"></v-input>
         </dd>
       </div>
       <div
@@ -65,20 +52,10 @@
         class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Sub Title
+          Color
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input v-model="subTitle"></v-input>
-        </dd>
-      </div>
-      <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
-      >
-        <dt class="text-sm leading-5 font-medium text-gray-500">
-          V-Model
-        </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-toggle v-model="model"></v-toggle>
+          <color-select v-model="color" />
         </dd>
       </div>
     </dl>
@@ -97,7 +74,7 @@
 
 <script>
 /* eslint-disable */
-  import { VCheckBox } from 'vantage-ui';
+  import { VRadio } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
   export default {
@@ -108,24 +85,22 @@
     data() {
       return {
         component: null,
-        color: 'blue',
-        value: 'vuejs',
-        label: 'Vuejs',
-        subTitle: '',
-        model: true
+        color: 'cyan',
+        label: 'Vue',
+        value: 'vue',
+        radio: ""
       }
     },
     created() {
-      this.component = VCheckBox;
+      this.component = VRadio;
     },
     computed: {
       code() {return`
-<v-check-box 
+<v-radio 
+  v-model="${this.radio}"
   color="${this.color}"
-  v-model="${this.model}"
-  value="${this.value}"
   label="${this.label}"
-  sub-title="${this.subTitle}"
+  value="${this.value}"
 />
       `}
     }

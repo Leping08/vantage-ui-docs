@@ -17,11 +17,11 @@
     heading="Tinker"
     :padding="false"
     :border="true"
-    class="m-4 overflow-visible"
+    class="m-4"
   >
-    <dl>
+    <dl class="">
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg overflow-visible"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Color
@@ -57,7 +57,7 @@
     data() {
       return {
         component: null,
-        color: 'blue'
+        color: 'cyan'
       }
     },
     created() {

@@ -42,7 +42,12 @@
           <td
             class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
           >
-            {{ name }}
+            <template v-if="name === 'modelValue'">
+              v-model
+            </template>
+            <template v-else>
+              {{ name }}
+            </template>
           </td>
           <td
             class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"

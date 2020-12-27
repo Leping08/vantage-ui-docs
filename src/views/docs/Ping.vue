@@ -1,12 +1,6 @@
 <template>
-  <v-card
-    id="avatar"
-    heading="Avatar"
-    :padding="true"
-    :border="true"
-    class="m-4"
-  >
-    <v-avatar id="example" :color="color" :name="name" />
+  <v-card id="Ping" heading="Ping" :padding="true" :border="true" class="m-4">
+    <v-ping id="example" :color="color" :size="size" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
@@ -25,23 +19,27 @@
   >
     <dl>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
-      >
-        <dt class="text-sm leading-5 font-medium text-gray-500">
-          Name
-        </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input v-model="name"></v-input>
-        </dd>
-      </div>
-      <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg overflow-visible"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg overflow-visible"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Color
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
           <color-select v-model="color" />
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg overflow-visible"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Size
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-search-select
+            v-model="size"
+            :items="sizeOptions"
+            placeholder="Select Size"
+          />
         </dd>
       </div>
     </dl>
@@ -60,7 +58,7 @@
 
 <script>
 /* eslint-disable */
-  import { VAvatar } from 'vantage-ui';
+  import { VPing } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
   export default {
@@ -71,18 +69,21 @@
     data() {
       return {
         component: null,
-        name: 'John Doe',
-        color: 'cyan'
+        color: 'cyan',
+        size: 3,
+        sizeOptions: [
+          1,2,3,4,5,6,7,8,9,10
+        ]
       }
     },
     created() {
-      this.component = VAvatar;
+      this.component = VPing;
     },
     computed: {
       code() {return`
-<v-badge 
-  name="${this.name}"
+<v-ping 
   color="${this.color}"
+  size="${this.size}"
 />
       `}
     }

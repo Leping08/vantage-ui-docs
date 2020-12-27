@@ -1,5 +1,5 @@
 <template>
-  <v-search-select v-model="value" :items="colors" placeholder="Search Color">
+  <v-search-select v-model="value" :items="colors" placeholder="Select Color">
     <template v-slot:default="{ item }">
       <div class="flex items-center">
         <div

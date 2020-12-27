@@ -1,16 +1,18 @@
 <template>
   <v-card
-    id="countdown"
-    heading="Countdown"
+    id="check-box"
+    heading="Check Box"
     :padding="true"
     :border="true"
     class="m-4"
   >
-    <v-countdown
+    <v-check-box
       id="example"
       :color="color"
-      :time="time"
-      :expiredMessage="expiredMessage"
+      v-model="model"
+      :value="value"
+      :label="label"
+      :sub-title="subTitle"
     />
   </v-card>
 
@@ -33,16 +35,6 @@
         class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Time
-        </dt>
-        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input type="date" v-model="time"></v-input>
-        </dd>
-      </div>
-      <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
-      >
-        <dt class="text-sm leading-5 font-medium text-gray-500">
           Color
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
@@ -50,13 +42,43 @@
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Expired Message
+          Label
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input v-model="expiredMessage"></v-input>
+          <v-input v-model="label"></v-input>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Value
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-input v-model="value"></v-input>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Sub Title
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-input v-model="subTitle"></v-input>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          V-Model
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-toggle v-model="model"></v-toggle>
         </dd>
       </div>
     </dl>
@@ -75,7 +97,7 @@
 
 <script>
 /* eslint-disable */
-  import { VCountdown } from 'vantage-ui';
+  import { VCheckBox } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
   export default {
@@ -85,22 +107,25 @@
     },
     data() {
       return {
-        time: null,
+        component: null,
         color: 'cyan',
-        expiredMessage: 'Expired'
+        value: 'vuejs',
+        label: 'Vuejs',
+        subTitle: '',
+        model: true
       }
     },
     created() {
-      this.component = VCountdown;
-      let date = new Date(new Date().getUTCFullYear() + 1, 1, 1)
-      this.time = date.getFullYear() + '-' + (date.getMonth() > 10 ? (date.getMonth()+1) : '0' + (date.getMonth()+1)) + '-' + (date.getDate() > 10 ? (date.getDate()) : '0' + date.getDate())
+      this.component = VCheckBox;
     },
     computed: {
       code() {return`
-<v-countdown 
-  time="${this.time}"
+<v-check-box 
   color="${this.color}"
-  expiredMessage="${this.expiredMessage}"
+  v-model="${this.model}"
+  value="${this.value}"
+  label="${this.label}"
+  sub-title="${this.subTitle}"
 />
       `}
     }
