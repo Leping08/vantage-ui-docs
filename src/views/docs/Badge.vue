@@ -17,11 +17,11 @@
     heading="Tinker"
     :padding="false"
     :border="true"
-    class="m-4"
+    class="m-4 overflow-visible"
   >
     <dl class="">
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg overflow-visible"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Color

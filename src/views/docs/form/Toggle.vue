@@ -35,7 +35,7 @@
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Color

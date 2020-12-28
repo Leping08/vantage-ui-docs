@@ -395,6 +395,11 @@ export default {
           title: "Progress Spinner",
           name: "progress-spinner",
           icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Stats",
+          name: "stats",
+          icon: "mdi-view-dashboard"
         }
       ]
     };

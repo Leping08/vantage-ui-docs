@@ -6,7 +6,32 @@ const { vantageSafelist, vantageContent } = require("./vantagePlugin");
 module.exports = {
   purge: {
     options: {
-      safelist: [...vantageSafelist(["blue"])]
+      safelist: [
+        ...vantageSafelist([
+          "lime",
+          "green",
+          "emerald",
+          "teal",
+          "cyan",
+          "lightBlue",
+          "blue",
+          "indigo",
+          "violet",
+          "purple",
+          "fuchsia",
+          "pink",
+          "rose",
+          "red",
+          "orange",
+          "amber",
+          "yellow",
+          "blueGray",
+          "coolGray",
+          "gray",
+          "trueGray",
+          "warmGray"
+        ])
+      ]
     },
     content: ["./src/**/*.vue", "./src/**/*.js", ...vantageContent()]
   },

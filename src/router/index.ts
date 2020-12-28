@@ -127,6 +127,14 @@ const routes = [
       import(
         /* webpackChunkName: "progress-spinner" */ "../views/docs/ProgressSpinner.vue"
       )
+  },
+  {
+    path: "/stats",
+    name: "stats",
+    text: "Stats",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "stats" */ "../views/docs/Stats.vue")
   }
 ];
 
