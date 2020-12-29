@@ -400,6 +400,16 @@ export default {
           title: "Stats",
           name: "stats",
           icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Tabs",
+          name: "tabs",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Data Table",
+          name: "data-table",
+          icon: "mdi-view-dashboard"
         }
       ]
     };

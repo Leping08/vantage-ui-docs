@@ -135,6 +135,22 @@ const routes = [
     searchable: true,
     component: () =>
       import(/* webpackChunkName: "stats" */ "../views/docs/Stats.vue")
+  },
+  {
+    path: "/tabs",
+    name: "tabs",
+    text: "Tabs",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "tabs" */ "../views/docs/Tabs.vue")
+  },
+  {
+    path: "/data-table",
+    name: "data-table",
+    text: "Data Table",
+    searchable: true,
+    component: () =>
+      import(/* webpackChunkName: "data-table" */ "../views/docs/DataTable.vue")
   }
 ];
 

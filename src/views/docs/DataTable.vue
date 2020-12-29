@@ -1,18 +1,12 @@
 <template>
   <v-card
-    id="description-list"
-    heading="Description List"
-    :padding="false"
+    id="Data"
+    heading="Data Table"
+    :padding="true"
     :border="true"
     class="m-4"
   >
-    <v-description-list
-      id="example"
-      :items="items"
-      :item-key="itemKey"
-      :item-value="itemValue"
-      :border="false"
-    />
+    <v-data-table id="example" :items="items" :search="search" :title="title" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
@@ -34,20 +28,20 @@
         class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Item Key
+          Title
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input v-model="itemKey"></v-input>
+          <v-input v-model="title" />
         </dd>
       </div>
       <div
         class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
-          Item Value
+          Search
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-input v-model="itemValue"></v-input>
+          <v-toggle v-model="search" />
         </dd>
       </div>
       <div
@@ -59,24 +53,38 @@
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
           <div
             class="flex items-center"
-            v-for="(item, index) in items"
-            :key="item"
+            v-for="(object, index) in items"
+            :key="object"
           >
-            <v-input class="flex-1 p-2" v-model="item.key" name="key"></v-input>
             <v-input
               class="flex-1 p-2"
-              v-model="item.value"
-              name="value"
+              v-model="object.title"
+              name="key"
+              label="Title"
+            ></v-input>
+            <v-input
+              class="flex-1 p-2"
+              v-model="object.name"
+              name="key"
+              label="Name"
+            ></v-input>
+            <v-input
+              class="flex-1 p-2"
+              v-model="object.price"
+              name="key"
+              label="Price"
             ></v-input>
             <v-button
-              class="m-4"
+              class="mx-4 mt-6"
               color="red"
               :outline="true"
               @click="removeItem(index)"
               >X</v-button
             >
           </div>
-          <v-button class="ml-2" :outline="true" @click="addItem()">+</v-button>
+          <v-button class="ml-2 mt-4" :outline="true" @click="addItem()"
+            >+</v-button
+          >
         </dd>
       </div>
     </dl>
@@ -95,7 +103,7 @@
 
 <script>
 /* eslint-disable */
-  import { VDescriptionList } from 'vantage-ui';
+  import { VDataTable } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   export default {
     components: {
@@ -104,45 +112,46 @@
     data() {
       return {
         component: null,
-        border: false,
-        itemKey: 'key',
-        itemValue: 'value',
+        search: true,
+        title: "Development Courses",
         items: [
           {
-            key: "Year",
-            value: "2020"
+            title: "Intro to CSS",
+            name: "Derek",
+            price: 858
           },
           {
-            key: "Make",
-            value:"Tesla"
+            title: "Backend API's",
+            name: "Adam",
+            price: 112
           },
           {
-            key: "Model",
-            value:"Model 3"
-          }
-        ],
+            title: "Intro to JavaScript",
+            name: "Chris",
+            price: 1280
+          },
+        ]
+      }
+    },
+    methods: {
+      removeItem(index) {
+        this.items.splice(index, 1)
+      },
+      addItem() {
+        this.items.push({title: "", name: "", price: ""});
       }
     },
     created() {
-      this.component = VDescriptionList;
+      this.component = VDataTable;
     },
     computed: {
       code() {return`
-<v-description-list
+<v-data-table
+  title="${this.title}"
+  :search="${this.search}"
   :items="${JSON.stringify(this.items).replaceAll("\"", "'")}"
-  itemKey="${this.itemKey}"
-  itemValue="${this.itemValue}"
-  :border="false"
 />
- `}
-    },
-    methods: {
-      addItem() {
-        this.items.push({"key": "", "value": ""});
-      },
-      removeItem(index) {
-        this.items.splice(index, 1)
-      }
+      `}
     }
   }
 </script>
