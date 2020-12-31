@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <div
           :class="
-            `h-4 w-4 border border-white border-8 rounded-full bg-${item}-600 mr-2`
+            `h-4 w-4 border-2 border-white rounded-full bg-${item}-600 mr-2`
           "
         ></div>
         <div :class="`hover:text-gray-800`">

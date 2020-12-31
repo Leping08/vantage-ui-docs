@@ -217,7 +217,7 @@
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.5.6
+              v0.5.10
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"
@@ -409,6 +409,11 @@ export default {
         {
           title: "Data Table",
           name: "data-table",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Search Select",
+          name: "search-select",
           icon: "mdi-view-dashboard"
         }
       ]

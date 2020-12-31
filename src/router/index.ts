@@ -151,6 +151,16 @@ const routes = [
     searchable: true,
     component: () =>
       import(/* webpackChunkName: "data-table" */ "../views/docs/DataTable.vue")
+  },
+  {
+    path: "/search-select",
+    name: "search-select",
+    text: "Search Select",
+    searchable: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "search-select" */ "../views/docs/form/SearchSelect.vue"
+      )
   }
 ];
 

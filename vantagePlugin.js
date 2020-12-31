@@ -60,8 +60,6 @@ function colorsClasses(inputColors = "*") {
     });
   });
 
-  console.log(classes);
-
   return classes;
 }
 
