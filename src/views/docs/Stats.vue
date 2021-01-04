@@ -1,11 +1,5 @@
 <template>
-  <v-card
-    id="heading"
-    heading="Heading"
-    :padding="true"
-    :border="true"
-    class="m-4"
-  >
+  <v-card id="Stats" heading="Stats" :padding="true" :border="true" class="m-4">
     <v-stats
       id="example"
       :color="color"

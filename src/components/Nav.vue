@@ -217,7 +217,7 @@
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.5.10
+              v0.5.13
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"
@@ -278,7 +278,7 @@
       </div>
 
       <main
-        class="flex-1 relative overflow-y-auto focus:outline-none"
+        class="flex-1 relative overflow-x-hidden focus:outline-none"
         tabindex="0"
       >
         <div class="pt-2 pb-6 md:py-6">
@@ -414,6 +414,11 @@ export default {
         {
           title: "Search Select",
           name: "search-select",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Date Range Picker",
+          name: "date-range-picker",
           icon: "mdi-view-dashboard"
         }
       ]

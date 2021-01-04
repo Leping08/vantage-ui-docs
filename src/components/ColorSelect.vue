@@ -1,5 +1,10 @@
 <template>
-  <v-search-select v-model="value" :items="colors" placeholder="Select Color">
+  <v-search-select
+    v-model="value"
+    :items="colors"
+    :color="color"
+    placeholder="Select Color"
+  >
     <template v-slot:default="{ item }">
       <div class="flex items-center">
         <div
@@ -22,6 +27,10 @@ export default {
     modelValue: {
       type: String,
       required: true
+    },
+    color: {
+      type: String,
+      required: false
     }
   },
   data() {

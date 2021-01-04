@@ -161,6 +161,16 @@ const routes = [
       import(
         /* webpackChunkName: "search-select" */ "../views/docs/form/SearchSelect.vue"
       )
+  },
+  {
+    path: "/date-range-picker",
+    name: "date-range-picker",
+    text: "Date Range picker",
+    searchable: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "date-range-picker" */ "../views/docs/form/DateRangePicker.vue"
+      )
   }
 ];
 

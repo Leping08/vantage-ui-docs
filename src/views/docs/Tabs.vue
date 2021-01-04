@@ -1,5 +1,5 @@
 <template>
-  <v-card id="Ping" heading="Ping" :padding="true" :border="true" class="m-4">
+  <v-card id="tabs" heading="Tabs" :padding="true" :border="true" class="m-4">
     <v-tabs v-model="tabId" :color="color">
       <v-tab :tabId="1">First tab</v-tab>
       <v-tab :tabId="2">Second tab</v-tab>
