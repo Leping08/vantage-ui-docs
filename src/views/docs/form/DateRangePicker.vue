@@ -42,6 +42,40 @@
           <color-select v-model="color" />
         </dd>
       </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Position
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-search-select v-model="position" :items="positions" />
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Start
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <span class="text-gray-600">
+            {{ startDate }}
+          </span>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          End
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <span class="text-gray-600">
+            {{ endDate }}
+          </span>
+        </dd>
+      </div>
     </dl>
   </v-card>
 
@@ -71,6 +105,10 @@
         component: null,
         color: 'cyan',
         position: 'left',
+        positions: [
+          'left',
+          'right'
+        ],
         startDate: null,
         endDate: null
       }

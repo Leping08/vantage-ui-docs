@@ -171,6 +171,12 @@ const routes = [
       import(
         /* webpackChunkName: "date-range-picker" */ "../views/docs/form/DateRangePicker.vue"
       )
+  },
+  {
+    path: "/:pathMatch(.*)",
+    name: "bad-not-found",
+    component: () =>
+      import(/* webpackChunkName: "404" */ "../components/404.vue")
   }
 ];
 

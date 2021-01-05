@@ -2,7 +2,7 @@
   <div class="flex pb-40 pt-10 lg:pb-0">
     <div class="flex items-center w-full lg:w-2/5">
       <div class="flex items-center">
-        <div>
+        <div class="">
           <svg
             viewBox="0 0 300 300"
             :class="`text-${selectedColor}-500 h-20`"
@@ -41,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="hidden lg:block w-4/5 -mt-24 -mr-72 transform rotate-3">
+    <div class="hidden lg:block w-4/5 -mt-32 -mr-72 transform rotate-3">
       <div class="hidden lg:grid gap-4 grid-cols-4 grid-rows-4 items-center">
         <div
           class="justify-self-auto h-full font-extrabold bg-white rounded-lg shadow-md flex justify-center items-center"

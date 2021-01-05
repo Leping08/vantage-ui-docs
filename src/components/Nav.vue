@@ -95,10 +95,10 @@
                         @click="showMobileNav = false"
                         :class="[
                           isActive
-                            ? `bg-gray-900 text-white borded border-l-4 border-cyan-400`
-                            : 'borded border-l-4 border-gray-800'
+                            ? `bg-gray-900 border-l-4 border-cyan-400`
+                            : 'border-l-4 border-gray-800'
                         ]"
-                        class="group flex items-center px-4 py-2 text-base leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
+                        class="group flex items-center px-4 py-2 text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150 hover:border-cyan-400"
                       >
                         <span
                           class="iconify mr-2"
@@ -145,10 +145,10 @@
                   <div
                     :class="[
                       isActive
-                        ? `bg-gray-900 text-white borded border-l-4 border-cyan-400`
-                        : 'borded border-l-4 border-gray-800'
+                        ? `bg-gray-900 border-l-4 border-cyan-400`
+                        : 'border-l-4 border-gray-800'
                     ]"
-                    class="group flex items-center px-4 py-2 text-base leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
+                    class="group flex items-center px-4 py-2 text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150 hover:border-cyan-400"
                   >
                     <span
                       class="iconify mr-2"
@@ -217,7 +217,7 @@
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.5.13
+              v0.5.14
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"
@@ -347,8 +347,8 @@ export default {
           icon: "mdi-view-dashboard"
         },
         {
-          title: "Countdown",
-          name: "countdown",
+          title: "Card",
+          name: "card",
           icon: "mdi-view-dashboard"
         },
         {
@@ -357,23 +357,23 @@ export default {
           icon: "mdi-view-dashboard"
         },
         {
-          title: "Card",
-          name: "card",
+          title: "Countdown",
+          name: "countdown",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Data Table",
+          name: "data-table",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Date Range Picker",
+          name: "date-range-picker",
           icon: "mdi-view-dashboard"
         },
         {
           title: "Description List",
           name: "description-list",
-          icon: "mdi-view-dashboard"
-        },
-        {
-          title: "Toggle",
-          name: "toggle",
-          icon: "mdi-view-dashboard"
-        },
-        {
-          title: "Radio",
-          name: "radio",
           icon: "mdi-view-dashboard"
         },
         {
@@ -397,6 +397,16 @@ export default {
           icon: "mdi-view-dashboard"
         },
         {
+          title: "Radio",
+          name: "radio",
+          icon: "mdi-view-dashboard"
+        },
+        {
+          title: "Search Select",
+          name: "search-select",
+          icon: "mdi-view-dashboard"
+        },
+        {
           title: "Stats",
           name: "stats",
           icon: "mdi-view-dashboard"
@@ -407,18 +417,8 @@ export default {
           icon: "mdi-view-dashboard"
         },
         {
-          title: "Data Table",
-          name: "data-table",
-          icon: "mdi-view-dashboard"
-        },
-        {
-          title: "Search Select",
-          name: "search-select",
-          icon: "mdi-view-dashboard"
-        },
-        {
-          title: "Date Range Picker",
-          name: "date-range-picker",
+          title: "Toggle",
+          name: "toggle",
           icon: "mdi-view-dashboard"
         }
       ]

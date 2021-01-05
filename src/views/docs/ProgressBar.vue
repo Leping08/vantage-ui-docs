@@ -9,7 +9,7 @@
     <v-progress-bar
       id="example"
       :color="color"
-      v-model="percent"
+      :percent="percent"
       :height="height"
       :rounded="rounded"
     />
@@ -111,7 +111,7 @@
     computed: {
       code() {return`
 <v-progress-bar 
-  v-model="${this.percent}"
+  :percent="${this.percent}"
   color="${this.color}"
   rounded="${this.rounded}"
   height="${this.height}"
