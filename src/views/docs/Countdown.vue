@@ -6,12 +6,7 @@
     :border="true"
     class="m-4"
   >
-    <v-countdown
-      id="example"
-      :color="color"
-      :time="time"
-      :expiredMessage="expiredMessage"
-    />
+    <v-countdown :color="color" :time="time" :expiredMessage="expiredMessage" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">

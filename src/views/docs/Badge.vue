@@ -1,6 +1,6 @@
 <template>
   <v-card id="badge" heading="Badge" :padding="true" :border="true" class="m-4">
-    <v-badge id="example" :color="color" class="">
+    <v-badge :color="color" class="">
       Success
     </v-badge>
   </v-card>

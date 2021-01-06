@@ -6,7 +6,7 @@
     :border="true"
     class="m-4"
   >
-    <v-avatar id="example" :color="color" :name="name" />
+    <v-avatar :color="color" :name="name" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">

@@ -7,7 +7,6 @@
     class="m-4"
   >
     <v-progress-bar
-      id="example"
       :color="color"
       :percent="percent"
       :height="height"

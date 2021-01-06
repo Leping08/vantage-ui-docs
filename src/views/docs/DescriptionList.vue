@@ -7,7 +7,6 @@
     class="m-4"
   >
     <v-description-list
-      id="example"
       :items="items"
       :item-key="itemKey"
       :item-value="itemValue"
@@ -65,12 +64,12 @@
             <v-input
               class="flex-1 mr-2 my-2"
               v-model="item.key"
-              name="key"
+              :name="index"
             ></v-input>
             <v-input
               class="flex-1 ml-2 my-2"
               v-model="item.value"
-              name="value"
+              :name="index"
             ></v-input>
             <v-button
               class="ml-4"

@@ -7,7 +7,6 @@
     class="m-4"
   >
     <v-button
-      id="example"
       :color="color"
       :full-width="fullWidth"
       :outline="outline"

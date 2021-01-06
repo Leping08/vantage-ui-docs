@@ -6,7 +6,7 @@
     :border="true"
     class="m-4"
   >
-    <v-toggle id="example" v-model="state" :color="color" />
+    <v-toggle v-model="state" :color="color" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">

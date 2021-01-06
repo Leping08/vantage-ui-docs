@@ -1,6 +1,6 @@
 <template>
   <v-card id="Ping" heading="Ping" :padding="true" :border="true" class="m-4">
-    <v-ping id="example" :color="color" :size="size" />
+    <v-ping :color="color" :size="size" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">

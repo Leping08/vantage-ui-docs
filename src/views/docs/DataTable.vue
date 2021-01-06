@@ -1,12 +1,12 @@
 <template>
   <v-card
-    id="Data"
+    id="data-table"
     heading="Data Table"
     :padding="true"
     :border="true"
     class="m-4"
   >
-    <v-data-table id="example" :items="items" :search="search" :title="title" />
+    <v-data-table :items="items" :search="search" :title="title" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">

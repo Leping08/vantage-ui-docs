@@ -1,6 +1,5 @@
 <template>
   <v-card
-    id="example"
     :heading="heading"
     :subheading="subheading"
     :padding="padding"

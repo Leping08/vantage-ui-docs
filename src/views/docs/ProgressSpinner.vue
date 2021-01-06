@@ -6,7 +6,7 @@
     :border="true"
     class="m-4"
   >
-    <v-progress-spinner id="example" :color="color" :size="size" />
+    <v-progress-spinner :color="color" :size="size" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">

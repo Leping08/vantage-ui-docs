@@ -1,7 +1,6 @@
 <template>
   <v-card id="Stats" heading="Stats" :padding="true" :border="true" class="m-4">
     <v-stats
-      id="example"
       :color="color"
       :heading="heading"
       :first-metric="firstMetric"

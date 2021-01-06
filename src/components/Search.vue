@@ -10,7 +10,7 @@
       ref="search"
       class="w-1/2"
       v-model="text"
-      placeholder="Search"
+      placeholder='Search the docs or "/" to focus'
     ></v-input>
     <div
       v-if="showDropdown"
@@ -18,7 +18,7 @@
     >
       <div
         v-if="filteredComponents == 0"
-        class="text-base leading-5 font-medium text-gray-400 p-2"
+        class="text-sm leading-5 font-medium text-gray-400 p-2"
       >
         No results
       </div>
@@ -27,7 +27,7 @@
           class=" hover:bg-gray-200 p-2 border-b border-gray-200 cursor-pointer"
           @click="changeRoute(component)"
         >
-          <div class="text-base leading-5 font-medium text-gray-700">
+          <div class="text-sm leading-5 font-medium text-gray-700">
             {{ component.text }}
           </div>
           <!-- <div class="text-sm font-medium text-gray-500">
@@ -51,11 +51,14 @@ export default {
   },
   created() {
     this.components = routes.filter(route => route.searchable);
-    // window.addEventListener("keypress", e => {
-    //   if (event.key === "/") {
-    //     this.$refs.search.focus()
-    //   }
-    // });
+    window.addEventListener("keypress", e => {
+      if (event.key === "/") {
+        const input = document.querySelector("#search").children[0].children[0];
+        e.preventDefault();
+        input.focus();
+        input.value = "";
+      }
+    });
   },
   computed: {
     filteredComponents() {

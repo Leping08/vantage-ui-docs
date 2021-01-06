@@ -7,7 +7,6 @@
     class="m-4"
   >
     <v-check-box
-      id="example"
       :color="color"
       v-model="model"
       :value="value"

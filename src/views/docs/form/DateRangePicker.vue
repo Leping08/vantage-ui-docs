@@ -7,7 +7,6 @@
     class="m-4"
   >
     <v-date-range-picker
-      id="example"
       :color="color"
       :position="position"
       v-model:start="startDate"
