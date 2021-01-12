@@ -12,10 +12,7 @@
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
-    <pre
-      v-highlightjs
-      class="overflow-hidden"
-    ><code class="html rounded-lg shadow-lg">{{ code }}</code></pre>
+    <code-editor language="html" :code="code" :copy="true" :heading="true" />
   </v-card>
 
   <v-card
@@ -85,10 +82,12 @@
   import { VTabs, VTab, VTabContent } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
+  import CodeEditor from '@/components/CodeEditor.vue';
   export default {
     components: {
       ComponentPropsTable,
-      ColorSelect
+      ColorSelect,
+      CodeEditor
     },
     data() {
       return {
@@ -105,8 +104,7 @@
       this.VTab = VTab;
     },
     computed: {
-      code() {return`
-<v-tabs v-model="${this.tabId}">
+      code() {return`<v-tabs v-model="${this.tabId}">
   <v-tab :tabId="1">First tab</v-tab>
   <v-tab :tabId="2">Second tab</v-tab>
   <v-tab :tabId="3">Third tab</v-tab>
@@ -114,8 +112,7 @@
   <v-tab-content :tabId="1">First content</v-tab-content>
   <v-tab-content :tabId="2">Second content</v-tab-content>
   <v-tab-content :tabId="3">Third content</v-tab-content>
-</v-tabs>
-      `}
+</v-tabs>`}
     }
   }
 </script>

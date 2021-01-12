@@ -55,8 +55,17 @@ function colorsClasses(inputColors = "*") {
       classes.push(`active:border-${color}-${number}`);
       classes.push(`focus:border-${color}-${number}`);
 
+      //Ring color
+      classes.push(`ring-${color}-${number}`);
+      classes.push(`hover:ring-${color}-${number}`);
+      classes.push(`active:ring-${color}-${number}`);
+      classes.push(`focus:ring-${color}-${number}`);
+
       //Text color
       classes.push(`text-${color}-${number}`);
+      classes.push(`hover:text-${color}-${number}`);
+      classes.push(`active:text-${color}-${number}`);
+      classes.push(`focus:text-${color}-${number}`);
     });
   });
 

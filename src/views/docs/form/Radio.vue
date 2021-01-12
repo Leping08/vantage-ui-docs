@@ -4,10 +4,7 @@
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
-    <pre
-      v-highlightjs
-      class="overflow-hidden"
-    ><code class="html rounded-lg shadow-lg">{{ code }}</code></pre>
+    <code-editor language="html" :code="code" :copy="true" :heading="true" />
   </v-card>
 
   <v-card
@@ -77,10 +74,12 @@
   import { VRadio } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
+  import CodeEditor from '@/components/CodeEditor.vue';
   export default {
     components: {
       ComponentPropsTable,
-      ColorSelect
+      ColorSelect,
+      CodeEditor
     },
     data() {
       return {
@@ -95,14 +94,12 @@
       this.component = VRadio;
     },
     computed: {
-      code() {return`
-<v-radio 
+      code() {return`<v-radio 
   v-model="${this.radio}"
   color="${this.color}"
   label="${this.label}"
   value="${this.value}"
-/>
-      `}
+/>`}
     }
   }
 </script>

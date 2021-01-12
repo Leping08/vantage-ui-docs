@@ -73,15 +73,46 @@
                 </button>
               </div>
               <div class="flex items-center px-4 py-2 bg-gray-900">
-                <img
-                  class="h-12 w-auto"
-                  src="@/assets/vantage-ui-logo-light.svg"
-                  alt="Workflow"
-                />
+                <div>
+                  <svg
+                    class="h-10"
+                    viewBox="0 0 280 245"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M192.058 179.423L229.891 245H269.904C277.602 245 282.413 236.667 278.564 230L220.633 129.66L192.058 179.423Z"
+                      class="text-cyan-700"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M209.07 109.633L180.5 159.388L111.377 39.5761L131.34 5.00002C135.189 -1.66665 144.811 -1.66667 148.66 5L209.07 109.633Z"
+                      class="text-cyan-700"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M154.402 245H206.801L180.54 199.481L154.402 245Z"
+                      class="text-cyan-500"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M168.982 179.446L140 229.918L70.93 109.633L99.8281 59.5798L168.982 179.446Z"
+                      class="text-cyan-500"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M59.3672 129.66L1.43596 230C-2.41304 236.667 2.39823 245 10.0962 245H125.598L59.3672 129.66Z"
+                      class="text-cyan-300"
+                      fill="currentColor"
+                    />
+                    <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M111.377 39.5761L229.891 245H206.801L99.8281 59.5798L111.377 39.5761Z" fill="white"/> -->
+                    <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M220.612 127.919L154.361 245H125.639L59.3879 127.92L70.9092 107.669L140 229.768L209.091 107.669L220.612 127.919Z" fill="white"/> -->
+                  </svg>
+                </div>
                 <div
-                  class="ml-2 font-lg text-lg md:text-xl lg:text-2xl tracking-normal font-sans text-gray-200"
+                  class="ml-2 text-lg md:text-xl lg:text-2xl tracking-normal font-sans text-gray-200"
                 >
-                  Vantage UI
+                  Vantage Ui
                 </div>
               </div>
               <div class="flex flex-col overflow-y-auto">
@@ -127,18 +158,49 @@
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex flex-col h-0 flex-1">
           <div class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-            <img
-              class="h-12 w-auto"
-              src="@/assets/vantage-ui-logo-light.svg"
-              alt="Workflow"
-            />
+            <div>
+              <svg
+                class="h-10"
+                viewBox="0 0 280 245"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M192.058 179.423L229.891 245H269.904C277.602 245 282.413 236.667 278.564 230L220.633 129.66L192.058 179.423Z"
+                  class="text-cyan-700"
+                  fill="currentColor"
+                />
+                <path
+                  d="M209.07 109.633L180.5 159.388L111.377 39.5761L131.34 5.00002C135.189 -1.66665 144.811 -1.66667 148.66 5L209.07 109.633Z"
+                  class="text-cyan-700"
+                  fill="currentColor"
+                />
+                <path
+                  d="M154.402 245H206.801L180.54 199.481L154.402 245Z"
+                  class="text-cyan-500"
+                  fill="currentColor"
+                />
+                <path
+                  d="M168.982 179.446L140 229.918L70.93 109.633L99.8281 59.5798L168.982 179.446Z"
+                  class="text-cyan-500"
+                  fill="currentColor"
+                />
+                <path
+                  d="M59.3672 129.66L1.43596 230C-2.41304 236.667 2.39823 245 10.0962 245H125.598L59.3672 129.66Z"
+                  class="text-cyan-300"
+                  fill="currentColor"
+                />
+                <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M111.377 39.5761L229.891 245H206.801L99.8281 59.5798L111.377 39.5761Z"/> -->
+                <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M220.612 127.919L154.361 245H125.639L59.3879 127.92L70.9092 107.669L140 229.768L209.091 107.669L220.612 127.919Z"/> -->
+              </svg>
+            </div>
             <div
               class="ml-2 font-lg text-2xl tracking-normal font-sans text-gray-200"
             >
-              Vantage UI
+              Vantage Ui
             </div>
           </div>
-          <div class="flex-1 flex flex-col overflow-y-auto">
+          <div class="flex-1 flex flex-col overflow-auto">
             <div class="flex-1 py-4 bg-gray-800 space-y-1">
               <div v-for="route in routes" :key="route">
                 <router-link :to="{ name: route.name }" v-slot="{ isActive }">
@@ -189,13 +251,46 @@
         <div class="flex-1 px-4 flex justify-between">
           <div class="flex-1 items-center flex">
             <div class="md:hidden flex items-center px-4 py-2 mx-auto">
-              <img
-                class="h-10 w-auto"
-                src="@/assets/vantage-ui-logo-dark.svg"
-                alt="Workflow"
-              />
-              <div class="ml-2 text-md tracking-normal font-sans text-gray-800">
-                Vantage UI
+              <div>
+                <svg
+                  class="h-10"
+                  viewBox="0 0 280 245"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M192.058 179.423L229.891 245H269.904C277.602 245 282.413 236.667 278.564 230L220.633 129.66L192.058 179.423Z"
+                    class="text-cyan-700"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M209.07 109.633L180.5 159.388L111.377 39.5761L131.34 5.00002C135.189 -1.66665 144.811 -1.66667 148.66 5L209.07 109.633Z"
+                    class="text-cyan-700"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M154.402 245H206.801L180.54 199.481L154.402 245Z"
+                    class="text-cyan-500"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M168.982 179.446L140 229.918L70.93 109.633L99.8281 59.5798L168.982 179.446Z"
+                    class="text-cyan-500"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M59.3672 129.66L1.43596 230C-2.41304 236.667 2.39823 245 10.0962 245H125.598L59.3672 129.66Z"
+                    class="text-cyan-300"
+                    fill="currentColor"
+                  />
+                  <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M111.377 39.5761L229.891 245H206.801L99.8281 59.5798L111.377 39.5761Z" fill="white"/> -->
+                  <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M220.612 127.919L154.361 245H125.639L59.3879 127.92L70.9092 107.669L140 229.768L209.091 107.669L220.612 127.919Z" fill="white"/> -->
+                </svg>
+              </div>
+              <div
+                class="ml-2 font-lg text-3xl tracking-normal font-sans text-gray-600"
+              >
+                Vantage Ui
               </div>
             </div>
             <div
@@ -217,7 +312,7 @@
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.5.14
+              v0.5.15
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"

@@ -3,58 +3,84 @@
     <div class="text-lg text-gray-700 leading-relaxed font-medium">
       Installation
     </div>
-    <pre v-highlightjs class="overflow-hidden">
-      <code class="shell rounded-lg shadow-lg">$ npm install vantage-ui</code>
-    </pre>
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="javascript"
+        :code="install"
+        :copy="true"
+        :heading="true"
+      />
+    </div>
 
     <div class="text-lg text-gray-700 leading-relaxed font-medium">
       Usage
     </div>
-    <div class="text-gray-500">
-      Just use the VantageUi like any other Vue3 plugin.
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="javascript"
+        :code="usage"
+        :copy="true"
+        :heading="true"
+      />
     </div>
-    <pre v-highlightjs class="">
-      <code class="javascript rounded-lg shadow-lg">import VantageUi from "vantage-ui"
-
-app.use(VantageUi)</code>
-    </pre>
 
     <div class="text-lg text-gray-700 leading-relaxed font-medium">
       Theme
     </div>
     <div class="text-gray-500">
-      Aspects of the Vantage UI components theme can be changed including the
-      color, shadow and the shape of the corners of things like buttons and
-      cards.
+      Aspects of Vantage components can be changed through the theme object
+      including the color, shadow, and how rounded the corners some components
+      are. These follow the Tailwind CSS classes for
+      <a
+        target="_blank"
+        href="https://tailwindcss.com/docs/customizing-colors#color-palette-reference"
+        class="text-cyan-600"
+        >colors</a
+      >,
+      <a
+        target="_blank"
+        href="https://tailwindcss.com/docs/box-shadow"
+        class="text-cyan-600"
+        >box shadows</a
+      >, and
+      <a
+        target="_blank"
+        href="https://tailwindcss.com/docs/border-radius#rounded-corners"
+        class="text-cyan-600"
+        >rounded corners</a
+      >.
       <!-- TODO Add default theme to docs -->
     </div>
-    <pre v-highlightjs class="overflow-hidden">
-      <code class="javascript rounded-lg shadow-lg">import VantageUi from "vantage-ui"
-
-app.use(VantageUi, {
-  color: "purple",
-  shadow: "shadow-lg",
-  rounded: "rounded-lg"
-})</code>
-    </pre>
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="javascript"
+        :code="theme"
+        :copy="true"
+        :heading="true"
+      />
+    </div>
 
     <div class="text-lg text-gray-700 leading-relaxed font-medium">
       Single Component
     </div>
     <div class="text-gray-500">
-      Every Vantage UI component can be individually imported.
+      Every Vantage component can be individually imported.
     </div>
-    <pre v-highlightjs class="">
-      <code class="html rounded-lg shadow-lg">{{ jsCode }}</code>
-      <code class="html rounded-lg shadow-lg">{{ htmlCode }}</code>
-    </pre>
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="html"
+        :code="importExample"
+        :copy="true"
+        :heading="true"
+      />
+    </div>
 
     <div class="text-lg text-gray-700 leading-relaxed font-medium">
       Purge CSS
     </div>
     <div class="text-gray-500">
-      Vantage UI uses Tailwind CSS for its components so we recommend using
-      Purge CSS to remove unused css for production builds.
+      Vantage uses Tailwind CSS for its components so we recommend using Purge
+      CSS to remove unused css for production builds.
     </div>
 
     <div class="text-lg text-gray-700 leading-relaxed font-medium mt-6">
@@ -62,51 +88,81 @@ app.use(VantageUi, {
     </div>
     <div class="text-gray-500">
       If you are using the whole component library we suggest including the
-      Vantage UI node modules directory in the Purge content array. That will
-      prevent Purge from removing any css that is used by Vantage UI but not
-      used in your application.
+      Vantage node modules directory in the Purge CSS content array. That will
+      prevent Purge CSS from removing any css that is used by Vantage.
     </div>
-    <pre v-highlightjs class="">
-      <code class="javascript rounded-lg shadow-lg">{{ purgeContent }}</code>
-    </pre>
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="javascript"
+        :code="purgeContent"
+        :copy="true"
+        :heading="true"
+      />
+    </div>
     <div class="text-gray-500">
-      If you are only importing select component then specify the components
-      being used.
+      If you are only importing individual components and not using the whole
+      library then specify the components being used in the content array. This
+      will make sure Purge CSS will include the css for only those components
+      but not the rest of the library.
     </div>
-    <pre v-highlightjs class="">
-      <code class="javascript rounded-lg shadow-lg">{{ purgeSingleComponent }}</code>
-    </pre>
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="javascript"
+        :code="purgeSingleComponent"
+        :copy="true"
+        :heading="true"
+      />
+    </div>
 
     <div class="text-lg text-gray-700 leading-relaxed font-medium">
       Whitelist
+    </div>
+    <div class="text-gray-500">
+      Vantage components use dynamic color classes in components exposing the
+      whole tailwind color pallet for use. In order to make sure Purge CSS does
+      not remove the colors you are using in Vantage components you can add them
+      to the whitelist like so.
     </div>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+  import CodeEditor from '@/components/CodeEditor.vue';
   export default {
+    components: {
+      CodeEditor
+    },
     computed: {
-      htmlCode() {return`<template>
+      install() {return `npm install vantage-ui`},
+      usage() {return `import VantageUi from "vantage-ui"
+
+app.use(VantageUi)`},
+      theme() {return `import VantageUi from "vantage-ui"
+
+app.use(VantageUi, {
+  color: "purple",
+  shadow: "shadow-lg",
+  rounded: "rounded-lg"
+})`},
+      importExample() {return`<template>
   <v-button 
     color="blue"
   >
     Submit
   </v-button>
-<\/template>`},
-      jsCode() {return`<script>
-import { VButton } from "vantage-ui"
+<\/template>
 
+<script>
+import { VButton } from "vantage-ui"
 export default {
   components: {
     "v-button": VButton
   }
 }
-<\/script>`
-      },
+<\/script>`},
       purgeContent() {
-      return `
-purge: {
+      return `purge: {
   options: {
     whitelist: []
   },
@@ -116,13 +172,9 @@ purge: {
     "./node_modules/vantage-ui/src/lib-components/**/*.vue",
     "./node_modules/vantage-ui/src/lib-components/**/*.js"
   ]
-}
-
-`
-      },
+}`},
       purgeSingleComponent() {
-        return`
-purge: {
+        return`purge: {
   options: {
     whitelist: []
   },
@@ -134,10 +186,7 @@ purge: {
     "./node_modules/vantage-ui/src/lib-components/badge.vue",
     "./node_modules/vantage-ui/src/lib-components/ping.vue"
   ]
-}
-
-`
-      }
+}`}
     }
   }
 </script>

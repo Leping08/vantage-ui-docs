@@ -62,7 +62,17 @@
           <td
             class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
           >
-            {{ prop.type.name }}
+            <template v-if="Array.isArray(prop.type)">
+              <span v-for="(propType, index) in prop.type" :key="propType">
+                {{ propType.name
+                }}<span v-if="index != Object.keys(prop.type).length - 1"
+                  >,
+                </span>
+              </span>
+            </template>
+            <template v-else>
+              {{ prop.type.name }}
+            </template>
           </td>
           <td
             class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
@@ -77,6 +87,9 @@
 
 <script>
 export default {
-  props: ["component"]
+  props: ["component"],
+  created() {
+    console.log(this.component);
+  }
 };
 </script>

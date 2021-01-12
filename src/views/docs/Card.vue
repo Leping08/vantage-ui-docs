@@ -10,10 +10,7 @@
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
-    <pre
-      v-highlightjs
-      class="overflow-hidden"
-    ><code class="html rounded-lg shadow-lg">{{ code }}</code></pre>
+    <code-editor language="html" :code="code" :copy="true" :heading="true" />
   </v-card>
 
   <v-card
@@ -82,9 +79,11 @@
 /* eslint-disable */
   import { VCard } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
+  import CodeEditor from '@/components/CodeEditor.vue';
   export default {
     components: {
-      ComponentPropsTable
+      ComponentPropsTable,
+      CodeEditor
     },
     data() {
       return {
@@ -99,16 +98,14 @@
       this.component = VCard;
     },
     computed: {
-      code() {return`
-<v-card 
+      code() {return`<v-card 
   heading="${this.heading}"
   subheading="${this.subheading}"
   :padding="${this.padding}"
   :border="${this.border}"
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-</v-card>
-      `}
+</v-card>`}
     }
   }
 </script>

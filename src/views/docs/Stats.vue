@@ -12,10 +12,7 @@
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
-    <pre
-      v-highlightjs
-      class="overflow-hidden"
-    ><code class="html rounded-lg shadow-lg">{{ code }}</code></pre>
+    <code-editor language="html" :code="code" :copy="true" :heading="true" />
   </v-card>
 
   <v-card
@@ -105,10 +102,12 @@
   import { VStats } from 'vantage-ui';
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
+  import CodeEditor from '@/components/CodeEditor.vue';
   export default {
     components: {
       ComponentPropsTable,
-      ColorSelect
+      ColorSelect,
+      CodeEditor
     },
     data() {
       return {
@@ -126,16 +125,14 @@
       this.component = VStats;
     },
     computed: {
-      code() {return`
-<v-stats 
+      code() {return`<v-stats 
   heading="${this.heading}"
   :first-metric="${this.firstMetric}"
   :second-metric="${this.secondMetric}"
   rounded="${this.rounded}"
   color="${this.color}"
   shadow="${this.shadow}"
-/>
-      `}
+/>`}
     }
   }
 </script>

@@ -15,10 +15,7 @@
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
-    <pre
-      v-highlightjs
-      class="overflow-hidden"
-    ><code class="html rounded-lg shadow-lg">{{ code }}</code></pre>
+    <code-editor language="html" :code="code" :copy="true" :heading="true" />
   </v-card>
 
   <v-card
@@ -89,11 +86,13 @@
   import ComponentPropsTable from '@/components/ComponentPropsTable.vue';
   import ColorSelect from '@/components/ColorSelect.vue';
   import RoundedSelect from '@/components/RoundedSelect.vue';
+  import CodeEditor from '@/components/CodeEditor.vue';
   export default {
     components: {
       ComponentPropsTable,
       ColorSelect,
-      RoundedSelect
+      RoundedSelect,
+      CodeEditor
     },
     data() {
       return {
@@ -108,14 +107,12 @@
       this.component = VProgressBar;
     },
     computed: {
-      code() {return`
-<v-progress-bar 
+      code() {return`<v-progress-bar 
   :percent="${this.percent}"
   color="${this.color}"
   rounded="${this.rounded}"
   height="${this.height}"
-/>
-      `}
+/>`}
     }
   }
 </script>

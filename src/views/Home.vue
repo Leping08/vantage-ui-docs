@@ -1,43 +1,59 @@
 <template>
   <div class="flex pb-40 pt-10 lg:pb-0">
     <div class="flex items-center w-full lg:w-2/5">
-      <div class="flex items-center">
-        <div class="">
+      <div>
+        <div class="flex items-center">
           <svg
-            viewBox="0 0 300 300"
-            :class="`text-${selectedColor}-500 h-20`"
+            class="h-20"
+            viewBox="0 0 280 245"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M150 166L58 65V202C58.0001 246 92.0001 285 150 285C208 285 241 255 241 202V65L150 166Z"
-              class="text-gray-700"
-              stroke="currentColor"
-              stroke-width="25"
+              d="M192.058 179.423L229.891 245H269.904C277.602 245 282.413 236.667 278.564 230L220.633 129.66L192.058 179.423Z"
+              class="text-cyan-700"
+              fill="currentColor"
             />
             <path
-              d="M58 15L150 116L241 15"
-              class="text-gray-700"
-              stroke="currentColor"
-              stroke-width="25"
-              stroke-linecap="round"
-            />
-            <circle
-              cx="150"
-              cy="226"
-              r="20"
+              d="M209.07 109.633L180.5 159.388L111.377 39.5761L131.34 5.00002C135.189 -1.66665 144.811 -1.66667 148.66 5L209.07 109.633Z"
+              class="text-cyan-700"
               fill="currentColor"
-              fill-opacity="1"
             />
+            <path
+              d="M154.402 245H206.801L180.54 199.481L154.402 245Z"
+              class="text-cyan-500"
+              fill="currentColor"
+            />
+            <path
+              d="M168.982 179.446L140 229.918L70.93 109.633L99.8281 59.5798L168.982 179.446Z"
+              class="text-cyan-500"
+              fill="currentColor"
+            />
+            <path
+              d="M59.3672 129.66L1.43596 230C-2.41304 236.667 2.39823 245 10.0962 245H125.598L59.3672 129.66Z"
+              class="text-cyan-300"
+              fill="currentColor"
+            />
+            <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M111.377 39.5761L229.891 245H206.801L99.8281 59.5798L111.377 39.5761Z" fill="white"/> -->
+            <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M220.612 127.919L154.361 245H125.639L59.3879 127.92L70.9092 107.669L140 229.768L209.091 107.669L220.612 127.919Z" fill="white"/> -->
           </svg>
+          <!-- <svg class="h-20" viewBox="0 0 280 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M192.058 179.423L229.891 245H269.904C277.602 245 282.413 236.667 278.564 230L220.633 129.66L192.058 179.423Z" :class="`text-${selectedColor}-700`" fill="currentColor"/>
+            <path d="M209.07 109.633L180.5 159.388L111.377 39.5761L131.34 5.00002C135.189 -1.66665 144.811 -1.66667 148.66 5L209.07 109.633Z" :class="`text-${selectedColor}-700`" fill="currentColor"/>
+            <path d="M154.402 245H206.801L180.54 199.481L154.402 245Z" :class="`text-${selectedColor}-500`" fill="currentColor"/>
+            <path d="M168.982 179.446L140 229.918L70.93 109.633L99.8281 59.5798L168.982 179.446Z" :class="`text-${selectedColor}-500`" fill="currentColor"/>
+            <path d="M59.3672 129.66L1.43596 230C-2.41304 236.667 2.39823 245 10.0962 245H125.598L59.3672 129.66Z" :class="`text-${selectedColor}-300`" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M111.377 39.5761L229.891 245H206.801L99.8281 59.5798L111.377 39.5761Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M220.612 127.919L154.361 245H125.639L59.3879 127.92L70.9092 107.669L140 229.768L209.091 107.669L220.612 127.919Z" fill="white"/>
+          </svg> -->
+          <div
+            class="font-lg text-7xl tracking-normal font-sans text-gray-600 ml-2"
+          >
+            Vantage Ui
+          </div>
         </div>
-        <div class="flex-1 pl-2">
-          <div class="text-5xl text-gray-700">
-            Vantage UI
-          </div>
-          <div class="text-gray-500 font-medium text-lg pt-2">
-            A Vue 3 component library styled with Tailwindcss
-          </div>
+        <div class="text-gray-500 text-xl pt-3">
+          A Vue 3 component library styled with Tailwindcss
         </div>
       </div>
     </div>
@@ -261,7 +277,8 @@
             <v-card heading="Colors" class="transform rotate-6 shadow-lg">
               <div class="text-blueGray-600">
                 Every colored vantage component has a color property that can be
-                set to any of the colors in the Tailwind color palette.
+                set to any of the colors in the Tailwind color palette. Select a
+                color and checkout the components at the top of the page.
               </div>
             </v-card>
           </div>
@@ -329,7 +346,7 @@
         </div>
       </div>
       <div class="w-full">
-        <div class="mx-2 lg:mx-4 xl:mx-8 px-2 lg:px-4 xl:px-8">
+        <div class="mx-2 lg:mx-4 xl:mx-8 px-2 lg:px-4 xl:px-8 my-16">
           <code-editor
             :code="importCode"
             :copy="true"
@@ -448,7 +465,7 @@
         </div>
       </div>
       <div class="w-full">
-        <div class="mx-6 text-center px-12">
+        <div class="mx-6 text-center px-6">
           <v-button
             class="z-0"
             :color="selectedColor"
@@ -462,7 +479,7 @@
         </div>
 
         <div class="w-full">
-          <div class="mx-4 px-8">
+          <div class="mx-4 p-8">
             <code-editor
               :code="tinkerCode"
               :copy="true"
@@ -479,46 +496,47 @@
       <path
         fill="currentColor"
         fill-opacity="1"
-        d="M0,64L30,69.3C60,75,120,85,180,96C240,107,300,117,360,133.3C420,149,480,171,540,170.7C600,171,660,149,720,154.7C780,160,840,192,900,176C960,160,1020,96,1080,90.7C1140,85,1200,139,1260,154.7C1320,171,1380,149,1410,138.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+        d="M0,128L48,133.3C96,139,192,149,288,149.3C384,149,480,139,576,138.7C672,139,768,149,864,138.7C960,128,1056,96,1152,96C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
       ></path>
     </svg>
   </div>
 
   <div class="bg-blueGray-700 pb-20 -mx-12 -mb-12">
-    <div class="flex lg:flex-row flex-col items-center">
+    <div class="flex flex-col lg:flex-row-reverse items-center">
       <div class="w-full">
         <div
-          class="bg-blueGray-500 transform -rotate-12 rounded-lg shadow-lg m-20"
+          class="bg-blueGray-500 transform rotate-12 rounded-lg shadow-lg m-20"
         >
           <div
             :class="
-              `bg-${selectedColor}-500 transform rotate-6 rounded-lg shadow-lg`
+              `bg-${selectedColor}-500 transform -rotate-6 rounded-lg shadow-lg`
             "
           >
-            <div class="transform rotate-6 shadow-lg p-4 rounded-lg bg-white">
-              <span class=" text-gray-900 text-xl leading-6 font-medium"
-                >Ready to get started?</span
-              >
-            </div>
+            <v-card
+              heading="Ready to get started?"
+              class="transform -rotate-6 rounded-lg shadow-lg"
+            >
+              <div class="text-blueGray-600">
+                Simply npm install vantage-ui and start using components. Don't
+                forget to check out the installation guide for instructions in
+                setting up purge css to keep those production bundle sizes low.
+              </div>
+            </v-card>
           </div>
         </div>
       </div>
       <div class="w-full">
         <div class="mx-4 px-8">
-          <code-editor :code="npmCode"></code-editor>
+          <code-editor
+            language="shell"
+            :code="npmCode"
+            :copy="true"
+            :heading="true"
+          ></code-editor>
         </div>
       </div>
     </div>
   </div>
-  <!-- <div>
-      PurgeCSS options
-    </div>
-    <div>
-      Unit Testing
-    </div>
-    <div>
-      No external libraries
-    </div> -->
 </template>
 
 <script>
