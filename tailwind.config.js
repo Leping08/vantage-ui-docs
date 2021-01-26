@@ -1,44 +1,19 @@
-/* eslint-disable */
-const colors = require("tailwindcss/colors");
-const { vantageSafelist, vantageContent } = require("./vantagePlugin");
-/* eslint-enable */
-
 module.exports = {
   purge: {
     options: {
-      safelist: [
-        ...vantageSafelist([
-          "lime",
-          "green",
-          "emerald",
-          "teal",
-          "cyan",
-          "lightBlue",
-          "blue",
-          "indigo",
-          "violet",
-          "purple",
-          "fuchsia",
-          "pink",
-          "rose",
-          "red",
-          "orange",
-          "amber",
-          "yellow",
-          "blueGray",
-          "coolGray",
-          "gray",
-          "trueGray",
-          "warmGray"
-        ])
-      ]
+      safelist: [...require("vantage-ui/dist/safelist").vantageSafelist()]
     },
-    content: ["./src/**/*.vue", "./src/**/*.js", ...vantageContent()]
+    content: [
+      "./src/**/*.vue",
+      "./src/**/*.js",
+      "./node_modules/vantage-ui/src/lib-components/**/*.vue",
+      "./node_modules/vantage-ui/src/lib-components/**/*.js"
+    ]
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      colors: colors
+      colors: require("tailwindcss/colors")
     }
   },
   variants: {
@@ -46,5 +21,5 @@ module.exports = {
       backgroundColor: ["active"]
     }
   },
-  plugins: [require("@tailwindcss/forms")]
+  plugins: []
 };

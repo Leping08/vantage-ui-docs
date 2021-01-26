@@ -120,8 +120,20 @@
     <div class="text-gray-500">
       Vantage components use dynamic color classes in components exposing the
       whole tailwind color pallet for use. In order to make sure Purge CSS does
-      not remove the colors you are using in Vantage components you can add them
-      to the whitelist like so.
+      not remove the color classes you can add them to the tailwind.config.js
+      safelist. We have created a helper function that takes an array of colors
+      you want to safelist as an argument. The more colors the larger the
+      production bundle size so only safelist colors used by vantage components
+      in production. In development feel free to leave the vantageSafelist blank
+      to expose all the colors.
+    </div>
+    <div class="pt-4 pb-8">
+      <code-editor
+        language="javascript"
+        :code="whiteList"
+        :copy="true"
+        :heading="true"
+      />
     </div>
   </div>
 </template>
@@ -186,7 +198,32 @@ export default {
     "./node_modules/vantage-ui/src/lib-components/badge.vue",
     "./node_modules/vantage-ui/src/lib-components/ping.vue"
   ]
-}`}
+}`},
+      whiteList() {
+        return `module.exports = {
+  options: {
+    safelist: [
+      // Safelist only colors used by vantage components in production
+      ...require('vantage-ui/dist/safelist').vantageSafelist(['red', 'blue'])
+
+      // Expose all colors for development only
+      // ...require('vantage-ui/dist/safelist').vantageSafelist()
+    ]
+  },
+  purge: [
+    './node_modules/vantage-ui/src/lib-components/**/*.vue',
+    './node_modules/vantage-ui/src/lib-components/**/*.js'
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {}
+  },
+  variants: {
+    extend: {}
+  },
+  plugins: []
+}`
+      }
     }
   }
 </script>

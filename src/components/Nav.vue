@@ -20,7 +20,7 @@
           Leaving: "transition-opacity ease-linear duration-300"
             From: "opacity-100"
             To: "opacity-0"
-        -->
+          -->
 
           <div class="fixed inset-0">
             <div
@@ -37,7 +37,7 @@
           Leaving: "transition ease-in-out duration-300 transform"
             From: "translate-x-0"
             To: "-translate-x-full"
-        -->
+          -->
 
           <transition
             enter-active-class="transition ease-in-out duration-300 transform"
@@ -298,21 +298,10 @@
             >
               <search class="pl-10" />
             </div>
-            <!-- <form class="w-full flex md:ml-0" action="#" method="GET">
-            <label for="search_field" class="sr-only">Search</label>
-            <div class="relative w-full text-gray-400 focus-within:text-gray-600">
-              <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
-                </svg>
-              </div>
-              <input id="search_field" class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm" placeholder="Search" type="search">
-            </div>
-          </form> -->
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.5.15
+              v0.6.2
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"
@@ -326,48 +315,6 @@
                 />
               </svg>
             </a>
-            <!-- Profile dropdown -->
-            <!-- <dropdown>
-              <div>
-                <v-avatar
-                  class="cursor-pointer"
-                  :name="user.name"
-                  id="user-menu"
-                  aria-label="User menu"
-                  aria-haspopup="true"
-                ></v-avatar>
-              </div>
-
-              <template v-slot:content>
-                <div
-                  class="py-1 rounded-md bg-white shadow-xs"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="user-menu"
-                >
-                  <router-link
-                    :to="{ name: 'settings' }"
-                    class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
-                    role="menuitem"
-                    >Settings</router-link
-                  >
-
-                  <router-link
-                    :to="{ name: 'profile' }"
-                    class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
-                    role="menuitem"
-                    >Profile</router-link
-                  >
-
-                  <a
-                    @click="logoutTest()"
-                    class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
-                    role="menuitem"
-                    >Logout</a
-                  >
-                </div>
-              </template>
-            </dropdown> -->
           </div>
         </div>
       </div>
@@ -377,23 +324,6 @@
         tabindex="0"
       >
         <div class="pt-2 pb-6 md:py-6">
-          <!-- <div
-            class="fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end"
-          >
-            <div class="mt-16 w-full">
-              <div
-                v-for="flash in flashes"
-                :key="flash"
-                class="flex sm:justify-end justify-center"
-              >
-                <flash
-                  :status="flash.status"
-                  :message="flash.message"
-                  :headline="flash.headline"
-                ></flash>
-              </div>
-            </div>
-          </div> -->
           <div class="mx-auto px-4 sm:px-6 md:px-10">
             <!-- Replace with your content -->
             <slot></slot>
@@ -418,103 +348,83 @@ export default {
       routes: [
         {
           title: "Home",
-          name: "home",
-          icon: "mdi-view-dashboard"
+          name: "home"
         },
         {
           title: "Installation",
-          name: "installation",
-          icon: "mdi-view-dashboard"
+          name: "installation"
         },
         {
           title: "Avatar",
-          name: "avatar",
-          icon: "mdi-view-dashboard"
+          name: "avatar"
         },
         {
           title: "Badge",
-          name: "badge",
-          icon: "mdi-view-dashboard"
+          name: "badge"
         },
         {
           title: "Button",
-          name: "button",
-          icon: "mdi-view-dashboard"
+          name: "button"
         },
         {
           title: "Card",
-          name: "card",
-          icon: "mdi-view-dashboard"
+          name: "card"
         },
         {
           title: "Check Box",
-          name: "checkbox",
-          icon: "mdi-view-dashboard"
+          name: "checkbox"
         },
         {
           title: "Countdown",
-          name: "countdown",
-          icon: "mdi-view-dashboard"
+          name: "countdown"
         },
         {
           title: "Data Table",
-          name: "data-table",
-          icon: "mdi-view-dashboard"
+          name: "data-table"
         },
         {
           title: "Date Range Picker",
-          name: "date-range-picker",
-          icon: "mdi-view-dashboard"
+          name: "date-range-picker"
         },
         {
           title: "Description List",
-          name: "description-list",
-          icon: "mdi-view-dashboard"
+          name: "description-list"
         },
         {
           title: "Input",
-          name: "input",
-          icon: "mdi-view-dashboard"
+          name: "input"
         },
         {
           title: "Ping",
-          name: "ping",
-          icon: "mdi-view-dashboard"
+          name: "ping"
         },
         {
           title: "Progress Bar",
-          name: "progress-bar",
-          icon: "mdi-view-dashboard"
+          name: "progress-bar"
         },
         {
           title: "Progress Spinner",
-          name: "progress-spinner",
-          icon: "mdi-view-dashboard"
+          name: "progress-spinner"
         },
         {
           title: "Radio",
-          name: "radio",
-          icon: "mdi-view-dashboard"
+          name: "radio"
         },
         {
           title: "Search Select",
-          name: "search-select",
-          icon: "mdi-view-dashboard"
+          name: "search-select"
         },
         {
           title: "Stats",
-          name: "stats",
-          icon: "mdi-view-dashboard"
+          name: "stats"
         },
         {
           title: "Tabs",
-          name: "tabs",
-          icon: "mdi-view-dashboard"
+          name: "tabs"
         },
         {
           title: "Toggle",
-          name: "toggle",
-          icon: "mdi-view-dashboard"
+          name: "toggle"
         }
       ]
     };
