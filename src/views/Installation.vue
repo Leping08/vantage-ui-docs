@@ -219,9 +219,11 @@ export default {
     extend: {}
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundColor: ["active"] // The button component uses active background colors
+    }
   },
-  plugins: []
+  plugins: [require("@tailwindcss/forms")] // Used by all form components
 }`
       }
     }

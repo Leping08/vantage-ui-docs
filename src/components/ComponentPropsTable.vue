@@ -87,9 +87,6 @@
 
 <script>
 export default {
-  props: ["component"],
-  created() {
-    console.log(this.component);
-  }
+  props: ["component"]
 };
 </script>
