@@ -12,6 +12,8 @@
       :outline="outline"
       :rounded="rounded"
       :size="size"
+      :shadow="shadow"
+      :ring="ring"
       class=""
     >
       Submit
@@ -75,7 +77,7 @@
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Rounded
@@ -86,6 +88,26 @@
             :items="roundedOptions"
             placeholder="Select Shape"
           ></v-search-select>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Shadow
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-input v-model="shadow" />
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Ring
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-toggle v-model="ring"></v-toggle>
         </dd>
       </div>
     </dl>
@@ -122,6 +144,8 @@
         outline: false,
         rounded: 'rounded-lg',
         size: 'md',
+        shadow: 'shadow',
+        ring: false,
         sizeOptions: [
           'xs',
           'sm',
@@ -150,8 +174,10 @@
   color="${this.color}"
   :fullWidth="${this.fullWidth}"
   :outline="${this.outline}"
-  rounded="${this.rounded}"
   size="${this.size}"
+  rounded="${this.rounded}"
+  shadow="${this.shadow}"
+  :ring="${this.ring}"
 >
   Submit
 </v-button>`}

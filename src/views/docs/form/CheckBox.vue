@@ -11,6 +11,7 @@
       v-model="model"
       :value="value"
       :label="label"
+      :ring="ring"
       :sub-title="subTitle"
     />
   </v-card>
@@ -68,7 +69,17 @@
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Ring
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-toggle v-model="ring"></v-toggle>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           V-Model
@@ -110,7 +121,8 @@
         value: 'vuejs',
         label: 'Vuejs',
         subTitle: '',
-        model: true
+        model: true,
+        ring: false
       }
     },
     created() {
@@ -122,6 +134,7 @@
   v-model="${this.model}"
   value="${this.value}"
   label="${this.label}"
+  :ring="${this.ring}"
   sub-title="${this.subTitle}"
 />`}
     }

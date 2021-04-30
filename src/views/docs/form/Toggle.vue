@@ -6,7 +6,7 @@
     :border="true"
     class="m-4"
   >
-    <v-toggle v-model="state" :color="color" />
+    <v-toggle v-model="state" :color="color" :ring="ring" />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
@@ -28,11 +28,21 @@
           V-Model
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-          <v-toggle id="example" v-model="state" />
+          <v-toggle v-model="state" />
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Ring
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-toggle v-model="ring" />
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Color
@@ -71,7 +81,8 @@
       return {
         component: null,
         color: 'cyan',
-        state: true
+        state: true,
+        ring: false
       }
     },
     created() {
@@ -81,6 +92,7 @@
       code() {return`<v-toggle 
   v-model="${this.state}"
   color="${this.color}"
+  :ring="${this.ring}"
 />`}
     }
   }

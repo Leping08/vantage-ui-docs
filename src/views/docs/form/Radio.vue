@@ -1,6 +1,12 @@
 <template>
   <v-card id="radio" heading="Radio" :padding="true" :border="true" class="m-4">
-    <v-radio :label="label" :value="value" v-model="radio" :color="color" />
+    <v-radio
+      :label="label"
+      :value="value"
+      v-model="radio"
+      :color="color"
+      :ring="ring"
+    />
   </v-card>
 
   <v-card id="code" heading="Code" :padding="true" :border="true" class="m-4">
@@ -46,7 +52,17 @@
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Ring
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-toggle v-model="ring"></v-toggle>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Color
@@ -87,6 +103,7 @@
         color: 'cyan',
         label: 'Vue',
         value: 'vue',
+        ring: false,
         radio: ""
       }
     },
@@ -98,6 +115,7 @@
   v-model="${this.radio}"
   color="${this.color}"
   label="${this.label}"
+  :ring="${this.ring}"
   value="${this.value}"
 />`}
     }
