@@ -162,7 +162,7 @@
   :rules="${JSON.stringify(this.rules).replaceAll("\"", "'")}"
   type="${this.type}"
   help-text="${this.helpText}"
-/>`},
+/>`.replace(/(^[ \t]*\n)/gm, "")},
       rules() {
         return [this.minRule ? 'min:2' : null, this.maxRule ? 'max:255' : null, this.requiredRule ? 'required' : null,].filter(Boolean)
       }

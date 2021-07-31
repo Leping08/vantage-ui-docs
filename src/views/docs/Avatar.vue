@@ -81,7 +81,7 @@
       code() {return`<v-avatar 
   name="${this.name}"
   color="${this.color}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

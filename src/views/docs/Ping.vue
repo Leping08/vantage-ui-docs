@@ -78,7 +78,7 @@
       code() {return`<v-ping 
   color="${this.color}"
   size="${this.size}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

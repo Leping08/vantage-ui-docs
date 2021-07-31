@@ -101,11 +101,11 @@
       code() {return`<v-card 
   heading="${this.heading}"
   subheading="${this.subheading}"
-  :padding="${this.padding}"
-  :border="${this.border}"
+  ${this.padding ? 'padding' : ''}
+  ${this.border ? 'border' : ''}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-</v-card>`}
+</v-card>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

@@ -250,10 +250,10 @@
     computed: {
       code() {return`<v-data-table
   title="${this.title}"
-  :search="${this.search}"
+  ${this.search ? 'search' : ''}
   :header="${JSON.stringify(this.header).replaceAll("\"", "'")}"
   :items="${JSON.stringify(this.items).replaceAll("\"", "'")}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

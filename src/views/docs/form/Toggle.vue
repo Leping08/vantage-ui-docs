@@ -92,8 +92,8 @@
       code() {return`<v-toggle 
   v-model="${this.state}"
   color="${this.color}"
-  :ring="${this.ring}"
-/>`}
+  ${this.ring ? 'ring' : ''}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

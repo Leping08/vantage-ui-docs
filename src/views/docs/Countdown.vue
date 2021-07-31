@@ -94,7 +94,7 @@
   time="${this.time}"
   color="${this.color}"
   expiredMessage="${this.expiredMessage}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

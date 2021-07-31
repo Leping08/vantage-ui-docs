@@ -155,7 +155,7 @@
   placeholder="${this.placeholder}"
   :items="${JSON.stringify(this.items).replaceAll("\"", "'")}"
   color="${this.color}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     },
     methods: {
       addItem() {

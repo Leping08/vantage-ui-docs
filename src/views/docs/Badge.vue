@@ -67,7 +67,7 @@
   color="${this.color}"
 >
   Success
-</v-badge>`}
+</v-badge>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

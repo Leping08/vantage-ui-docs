@@ -120,7 +120,7 @@
   v-model:end="${this.endDate}"
   color="${this.color}"
   position="${this.position}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

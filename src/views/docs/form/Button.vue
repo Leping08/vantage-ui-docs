@@ -101,13 +101,23 @@
         </dd>
       </div>
       <div
-        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white rounded-b-lg"
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-white"
       >
         <dt class="text-sm leading-5 font-medium text-gray-500">
           Ring
         </dt>
         <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
           <v-toggle v-model="ring"></v-toggle>
+        </dd>
+      </div>
+      <div
+        class="px-4 py-5 sm:grid sm:grid-cols-3 sm:border-gray-200 items-center bg-gray-50 rounded-b-lg"
+      >
+        <dt class="text-sm leading-5 font-medium text-gray-500">
+          Disabled
+        </dt>
+        <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+          <v-toggle v-model="disabled"></v-toggle>
         </dd>
       </div>
     </dl>
@@ -146,6 +156,7 @@
         size: 'md',
         shadow: 'shadow',
         ring: false,
+        disabled: false,
         sizeOptions: [
           'xs',
           'sm',
@@ -172,15 +183,16 @@
     computed: {
       code() {return`<v-button 
   color="${this.color}"
-  :fullWidth="${this.fullWidth}"
-  :outline="${this.outline}"
+  ${this.fullWidth ? 'fullWidth' : ''}
+  ${this.outline ? 'outline' : ''}
   size="${this.size}"
   rounded="${this.rounded}"
   shadow="${this.shadow}"
-  :ring="${this.ring}"
+  ${this.ring ? 'ring' : ''}
+  ${this.disabled ? 'disabled' : ''}
 >
   Submit
-</v-button>`}
+</v-button>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

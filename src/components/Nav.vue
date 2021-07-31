@@ -301,7 +301,7 @@
           </div>
           <div class="ml-2 flex items-center md:ml-6">
             <div class="text-gray-500 mr-4 text-sm">
-              v0.7.2
+              v0.7.5
             </div>
             <a
               href="https://github.com/Leping08/Vantage-UI"

@@ -10,7 +10,6 @@
       :items="items"
       :item-key="itemKey"
       :item-value="itemValue"
-      :border="false"
     />
   </v-card>
 
@@ -147,8 +146,7 @@
   :items="${JSON.stringify(this.items).replaceAll("\"", "'")}"
   itemKey="${this.itemKey}"
   itemValue="${this.itemValue}"
-  :border="false"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     },
     methods: {
       addItem() {

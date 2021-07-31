@@ -115,9 +115,9 @@
   v-model="${this.radio}"
   color="${this.color}"
   label="${this.label}"
-  :ring="${this.ring}"
+  ${this.ring ? 'ring' : ''}
   value="${this.value}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

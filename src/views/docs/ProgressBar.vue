@@ -112,7 +112,7 @@
   color="${this.color}"
   rounded="${this.rounded}"
   height="${this.height}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>

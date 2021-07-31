@@ -134,9 +134,9 @@
   v-model="${this.model}"
   value="${this.value}"
   label="${this.label}"
-  :ring="${this.ring}"
+  ${this.ring ? 'ring' : ''}
   sub-title="${this.subTitle}"
-/>`}
+/>`.replace(/(^[ \t]*\n)/gm, "")}
     }
   }
 </script>
